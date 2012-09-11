@@ -1,4 +1,4 @@
-define(['views/tweet'], function(TweetView) {
+define(['views/tweet_list'], function(TweetListView) {
 
    var AppRouter = Backbone.Router.extend({
       
@@ -8,14 +8,12 @@ define(['views/tweet'], function(TweetView) {
      
       initialize: function() {
          this.views = {
-            'tweet': new TweetView()  
+            tweets: new TweetListView()  
          }
       },
        
       list: function() {
-         console.log(
-            this.views.tweet
-         );
+         this.views.tweets.render();
       }
 
    }); 
