@@ -5,6 +5,7 @@ require.config({
       router: '../router',
       views: '../views',
       models: '../models',
-      collections: '../collections'
+      collections: '../collections',
+      templates: '../templates'
    }
 });

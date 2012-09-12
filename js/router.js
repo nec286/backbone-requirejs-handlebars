@@ -1,19 +1,19 @@
-define(['views/tweet_list'], function(TweetListView) {
+define(['views/search'], function(SearchView) {
 
    var AppRouter = Backbone.Router.extend({
       
       routes: {
-         'tweets': 'list',
+         'tweets': 'search',
       },
      
       initialize: function() {
          this.views = {
-            tweets: new TweetListView()  
+            search: new SearchView()  
          }
       },
        
-      list: function() {
-         this.views.tweets.render();
+      search: function() {
+         this.views.search.render();
       }
 
    }); 

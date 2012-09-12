@@ -1,11 +1,13 @@
-define(['collections/tweet'], function(Tweets) {
+define(['collections/tweet', 'templates/search'], function(Tweets) {
 
    return Backbone.View.extend({
       
       el: '#main',
 
+      template: Handlebars.templates['search'],
+
       events: {
-         'click #search': 'search'
+         'click #search': 'search' 
       },
 
       initialize: function() {
@@ -15,11 +17,13 @@ define(['collections/tweet'], function(Tweets) {
       },
 
       render: function() {
-          
+         this.$el.html(
+            this.template()
+         );
       },
 
       update: function() {
-         // update list view with fresh results
+         console.log(this.collection);
       },
 
       search: function() {
