@@ -1,0 +1,20 @@
+input#search {
+   margin: 0;
+   padding: 5px;
+   width: 300px;
+   border: 1px solid black;  
+   background-color: #e0e0e0;
+}
+
+ul#tweets {
+   padding: 0;
+   list-style-type: none;
+}
+
+ul#tweets li {
+   width: 300px;
+   margin: 5px 0;
+   padding: 5px;
+   border: 1px dotted black;
+}
+
