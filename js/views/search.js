@@ -1,13 +1,11 @@
-define(['collections/tweet', 'templates/search'], function(Tweets) {
+define(['collections/tweet'], function(Tweets) {
 
    return Backbone.View.extend({
       
       el: '#main',
 
-      template: Handlebars.templates['search'],
-
       events: {
-         'click #search': 'search' 
+         'keyup #search': 'search' 
       },
 
       initialize: function() {
@@ -18,17 +16,26 @@ define(['collections/tweet', 'templates/search'], function(Tweets) {
 
       render: function() {
          this.$el.html(
-            this.template()
+            Handlebars.templates.search()
          );
+
+         this.$search = $('#search'),
+         this.$tweets = $('#tweets');
       },
 
       update: function() {
-         console.log(this.collection);
+         this.$tweets.html(
+            Handlebars.templates.tweets({
+               tweets: this.collection.toJSON()  
+            })
+         );
       },
 
-      search: function() {
-         this.collection.fetch();
-      }
+      search: _.throttle(function(e) {
+         this.collection.fetch({
+            data: {q: this.$search.val()}  
+         });
+      }, 1000)
          
    });
    

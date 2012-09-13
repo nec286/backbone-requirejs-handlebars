@@ -1,4 +1,4 @@
-define(['views/search'], function(SearchView) {
+define(['views/search', 'templates/search'], function(SearchView) {
 
    var AppRouter = Backbone.Router.extend({
       

@@ -3,7 +3,7 @@ define(['models/tweet'], function(Tweet) {
 
       model: Tweet,
 
-      url: 'http://search.twitter.com/search.json?q=backbonejs&callback=?',
+      url: 'http://search.twitter.com/search.json?callback=?',
 
       parse: function(response) {
          return response.results;
