@@ -1,4 +1,3 @@
-backbone-requirejs
-==================
+##backbone-handlebars-requirejs
 
-An clean amd boilerplate for backbonejs
+##zepto-bootstrap
